@@ -1,0 +1,7 @@
+components/*
+pages/*
+node_modules
+.next/cache/*
+styles
+data.json
+config.json
