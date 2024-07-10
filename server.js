@@ -105,9 +105,9 @@ const run = async () => {
 
   server.listen(port, () => {
     console.clear();
-    console.log('\nNext.js with Express API\n');
-    console.log(`Port: ${port}`);
-    console.log(`Express API Route: /query/[q]\n`);
+    console.log(`🚀 Test dashboard running on http://localhost:${port}/ \n`)
+    console.log(`🚀 Query API Route: /query/[q]\n`);
+    console.log(`🚀 Data Edit API Route: /editor\n`);
   });
 };
 
