@@ -132,11 +132,10 @@ const Home: React.FC = () => {
         <Toolbar>
           <Typography sx={{ flexGrow: 1,fontWeight: "500",
               fontSize: "20px",display:"flex",alignItems:"center",gap:"4px" }}>
-            <HomeIcon/>
-            Home
+            <Link style={{display:"flex",alignItems:"center"}} href="/"><HomeIcon/></Link> {"> Stream Test"}
           </Typography>
           <Button >
-            <Link href="/editor" style={{ fontWeight: "500",
+            <Link href="/StreamTest/editor" style={{ fontWeight: "500",
               fontSize: "14px",textDecoration: 'none',color:"black",display:"flex",alignItems:"center" }}>
               Open Editor
               <CallMadeIcon/>
