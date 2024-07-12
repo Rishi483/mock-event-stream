@@ -132,7 +132,7 @@ const Home: React.FC = () => {
         <Toolbar>
           <Typography sx={{ flexGrow: 1,fontWeight: "500",
               fontSize: "20px",display:"flex",alignItems:"center",gap:"4px" }}>
-            <Link style={{display:"flex",alignItems:"center"}} href="/"><HomeIcon/></Link> {"> Stream Test"}
+            <Link style={{display:"flex",alignItems:"center",textDecoration: 'none',color:"black"}} href="/"><HomeIcon/></Link> {"> Stream Test"}
           </Typography>
           <Button >
             <Link href="/StreamTest/editor" style={{ fontWeight: "500",

@@ -3,7 +3,12 @@ import Link from "next/link";
 import React from "react";
 import LaunchIcon from '@mui/icons-material/Launch';
 
-const Card = () => {
+interface CardPropsType{
+  title:string,
+  lastUpdated:string
+}
+
+const Card = ({title,lastUpdated}:CardPropsType) => {
   return (
     <Grid item xs={12} sm={3}>
       <Stack p={2} borderLeft="5px solid" borderColor={"#f4c558"} bgcolor={"#fff"}>
@@ -12,7 +17,7 @@ const Card = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box width="50%">
+          <Box width="60%">
             <Typography
               textOverflow="ellipsis"
               overflow="hidden"
@@ -20,7 +25,7 @@ const Card = () => {
               fontWeight={400}
               variant="h6"
             >
-              Stream Test
+              {title}
             </Typography>
           </Box>
           <Link href="/StreamTest">
@@ -29,7 +34,7 @@ const Card = () => {
             </IconButton>
           </Link>
         </Stack>
-        <Typography variant="caption">Updated on: 10 July 2024</Typography>
+        <Typography variant="caption">Updated on: {lastUpdated}</Typography>
       </Stack>
     </Grid>
   );

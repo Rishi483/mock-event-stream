@@ -1,8 +1,8 @@
 {
-  "name": "stream-test-server",
+  "name": "mock-event-stream",
   "version": "1.0.1",
   "bin": {
-    "stream-test-server": "server.js"
+    "mock-event-stream": "server.js"
   },
   "scripts": {
     "dev": "next dev",
@@ -23,6 +23,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/next": "^9.0.0",
     "@types/node": "20.14.9",
     "@types/react": "^18",
