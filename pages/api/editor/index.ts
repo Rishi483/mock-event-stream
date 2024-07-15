@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const dataFilePath = path.join(process.cwd(), 'data.json');
+const dataFilePath = path.join(process.cwd(), 'mock-event-stream-data.json');
 
 interface EditorRequest extends NextApiRequest {
   body: {

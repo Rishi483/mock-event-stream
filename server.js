@@ -7,7 +7,7 @@ const { readFile, readFileSync } = require('fs');
 
 const app = next({ dev: false ,dir:__dirname});
 const handle = app.getRequestHandler();
-const CONFIG_PATH = 'config.json';
+const CONFIG_PATH = 'mock-event-stream-config.json';
 
 const importConfig = () => {
   try {
@@ -36,7 +36,7 @@ const run = async () => {
   }
 
   const port = config.port;
-  const dataFilePath = resolve(process.cwd(), 'data.json');
+  const dataFilePath = resolve(process.cwd(), 'mock-event-stream-data.json');
 
   await app.prepare();
 
