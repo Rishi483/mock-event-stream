@@ -5,10 +5,11 @@ import LaunchIcon from '@mui/icons-material/Launch';
 
 interface CardPropsType{
   title:string,
-  lastUpdated:string
+  lastUpdated:string,
+  routeName:string
 }
 
-const Card = ({title,lastUpdated}:CardPropsType) => {
+const Card = ({title,lastUpdated,routeName}:CardPropsType) => {
   return (
     <Grid item xs={12} sm={3}>
       <Stack p={2} borderLeft="5px solid" borderColor={"#f4c558"} bgcolor={"#fff"}>
@@ -28,7 +29,7 @@ const Card = ({title,lastUpdated}:CardPropsType) => {
               {title}
             </Typography>
           </Box>
-          <Link href="/StreamTest">
+          <Link href={`/${routeName}`}>
             <IconButton size="small">
               <LaunchIcon />
             </IconButton>
