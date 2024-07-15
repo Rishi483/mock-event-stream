@@ -58,6 +58,7 @@ Assuming `data.json` contains:
 ```
 - To get the greeting: `http://localhost:5000/query/greeting`
 - To get the quote: `http://localhost:5000/query/quote`
+- To test for the error case you can query for `http://localhost:5000/query/quote?errorTimeout=2000` this will stop the connection after 2 seconds.
 
 ### 5. Dashboard
 Access the dashboard at http://localhost:5000/MockEventStream to test the data and view responses.

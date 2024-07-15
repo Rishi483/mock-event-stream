@@ -2,10 +2,10 @@
 
 const express = require('express');
 const next = require('next');
-const { resolve} = require('path');
+const { resolve } = require('path');
 const { readFile, readFileSync } = require('fs');
 
-const app = next({ dev: false ,dir:__dirname});
+const app = next({ dev: false, dir: __dirname });
 const handle = app.getRequestHandler();
 const CONFIG_PATH = 'mock-event-stream-config.json';
 
@@ -44,6 +44,7 @@ const run = async () => {
 
   server.get('/query/:q', (req, res) => {
     const { q } = req.params;
+    const decodedQuery = decodeURIComponent(q);
 
     readFile(dataFilePath, 'utf8', (err, data) => {
       if (err) {
@@ -59,7 +60,7 @@ const run = async () => {
         return res.status(500).send('Internal Server Error.');
       }
 
-      const responseText = jsonData[q];
+      const responseText = jsonData[decodedQuery];
       if (!responseText) {
         return res.status(404).send('Query not found.');
       }
@@ -105,7 +106,7 @@ const run = async () => {
 
   server.listen(port, () => {
     console.clear();
-    console.log(`🚀 Test dashboard running on http://localhost:${port}/ \n`)
+    console.log(`🚀 Test dashboard running on http://localhost:${port}/ \n`);
     console.log(`🚀 Query API Route: /query/[q]\n`);
     console.log(`🚀 Data Edit API Route: /editor\n`);
   });

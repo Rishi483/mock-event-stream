@@ -17,6 +17,7 @@ import Link from "next/link";
 import HomeIcon from '@mui/icons-material/Home';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import SendIcon from '@mui/icons-material/Send';
+
 interface Message {
   text: string;
   user: boolean;
@@ -36,7 +37,7 @@ const Home: React.FC = () => {
     setLoading(true);
     setMessages((prev) => [...prev, { text: "", user: false }]);
 
-    let url = `/query/${input}`;
+    let url = `/query/${encodeURIComponent(input)}`;
     if (error && errorTimeout) {
       url += `?errorTimeout=${errorTimeout}`;
     }
@@ -74,7 +75,7 @@ const Home: React.FC = () => {
       setInput("");
     } else {
       try {
-        const response = await fetch(`/query/${input}`, {
+        const response = await fetch(url, {
           method: "GET",
         });
 
@@ -130,15 +131,13 @@ const Home: React.FC = () => {
     >
       <AppBar position="sticky" style={{ backgroundColor: "#fff", borderBottom: "1px solid #F8F8FA" }} elevation={0}>
         <Toolbar>
-          <Typography sx={{ flexGrow: 1,fontWeight: "500",
-              fontSize: "20px",display:"flex",alignItems:"center",gap:"4px" }}>
-            <Link style={{display:"flex",alignItems:"center",textDecoration: 'none',color:"black"}} href="/"><HomeIcon/></Link> {"> Mock Event Stream"}
+          <Typography sx={{ flexGrow: 1, fontWeight: "500", fontSize: "20px", display: "flex", alignItems: "center", gap: "4px" }}>
+            <Link style={{ display: "flex", alignItems: "center", textDecoration: 'none', color: "black" }} href="/"><HomeIcon /></Link> {"> Mock Event Stream"}
           </Typography>
-          <Button >
-            <Link href="/MockEventStream/editor" style={{ fontWeight: "500",
-              fontSize: "14px",textDecoration: 'none',color:"black",display:"flex",alignItems:"center" }}>
+          <Button>
+            <Link href="/MockEventStream/editor" style={{ fontWeight: "500", fontSize: "14px", textDecoration: 'none', color: "black", display: "flex", alignItems: "center" }}>
               Open Editor
-              <CallMadeIcon/>
+              <CallMadeIcon />
             </Link>
           </Button>
         </Toolbar>
@@ -190,7 +189,7 @@ const Home: React.FC = () => {
             display: "flex",
             alignItems: "center",
             borderRadius: "10px",
-            backgroundColor:"#fff"
+            backgroundColor: "#fff"
           }}
         >
           <TextField
@@ -205,17 +204,17 @@ const Home: React.FC = () => {
             variant="outlined"
             onClick={() => handleSend(true, false)}
             disabled={loading}
-            sx={{ mr: 2 ,height:"55px",width:"120px"}}
+            sx={{ mr: 2, height: "55px", width: "120px" }}
           >
-            {loading ? "Fetching" : <div style={{fontSize:"10px"}}>{<SendIcon/>} (EventSource)</div>}
+            {loading ? "Fetching" : <div style={{ fontSize: "10px" }}>{<SendIcon />} (EventSource)</div>}
           </Button>
           <Button
             variant="outlined"
             onClick={() => handleSend(false, false)}
             disabled={loading}
-            sx={{ mr: 2 ,height:"55px",width:"120px"}}
+            sx={{ mr: 2, height: "55px", width: "120px" }}
           >
-            {loading ? "Fetching" : <div style={{fontSize:"10px"}}>{<SendIcon/>} (Fetch)</div>}
+            {loading ? "Fetching" : <div style={{ fontSize: "10px" }}>{<SendIcon />} (Fetch)</div>}
           </Button>
           <TextField
             label="Timeout (ms)"
@@ -223,7 +222,7 @@ const Home: React.FC = () => {
             value={errorTimeout}
             onChange={(e) => setErrorTimeout(e.target.value)}
             InputProps={{ inputProps: { min: 0 } }}
-            sx={{ width: "140px", mr: 2,height:"55px" }}
+            sx={{ width: "140px", mr: 2, height: "55px" }}
           />
           <Button
             variant="outlined"
