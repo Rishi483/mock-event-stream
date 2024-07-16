@@ -13,11 +13,13 @@ npm install mock-event-stream
 
 Create a `mock-event-stream-config.json` file at the root of your project in which you will install the package with the following structure:
 
-- **port** : The port on which you want the package to run.
+- **port** : The port on which you want the package to run (By default it will be 5000).
+- **latency** : The delay you want between the event stream responses. (By default it will be 1 second)
 
 ```json
 {
-  "port": 5000
+  "port": 5000,
+  "latency": 1000,
 }
 ```
 ### 2. Create Data File

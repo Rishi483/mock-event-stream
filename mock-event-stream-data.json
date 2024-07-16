@@ -1,15 +1,10 @@
 {
-  "What is your name?": "My name is Sprinklr",
   "How can I help you?": "I am here to assist you with your queries.",
   "Give me the data for q1": "This is the demo data for q1 which includes our sales for quarter 1",
   "Give me the data for q2": "This is the demo data for q2 which includes our sales for quarter 2",
   "What is the weather today?": "The weather today is sunny with a high of 35°C.",
-  "What's the time now?": "The current time is 2:34 PM.",
-  "Give me the latest news": "Here is the latest news: link",
   "Set a reminder for meeting": "Reminder set for the meeting at 3:00 PM.",
   "Send an email": "Email sent to the recipient.",
   "Show me my calendar": "Here is your calendar for today.",
-  "Tell me about yourself": "I am a virtual assistant created to help you with various tasks.",
-  "How do I reset my password?": "To reset your password, go to the settings page and click 'Reset Password'.",
-  "demo": "This is a demo text which is coming in chunks through event stream"
+  "How do I reset my password?": "To reset your password, go to the settings page and click 'Reset Password'."
 }

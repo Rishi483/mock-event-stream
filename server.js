@@ -30,13 +30,9 @@ const generateChunkedResponse = (text, chunkSize) => {
 const run = async () => {
   const config = importConfig();
 
-  if (!config || !config.port) {
-    console.error('Port not specified in configuration');
-    process.exit(1);
-  }
-
-  const port = config.port;
+  const port = config.port || 5000;
   const dataFilePath = resolve(process.cwd(), 'mock-event-stream-data.json');
+  const latency = config.latency || 1000;
 
   await app.prepare();
 
@@ -85,7 +81,7 @@ const run = async () => {
             res.write('event: end\ndata: end\n\n');
             res.end();
           }
-        }, 1000); // can be changed
+        }, latency); 
 
         const errorTimeout = req.query.errorTimeout;
         if (errorTimeout) {
@@ -106,7 +102,7 @@ const run = async () => {
 
   server.listen(port, () => {
     console.clear();
-    console.log(`🚀 Test dashboard running on http://localhost:${port}/ \n`);
+    console.log(`🚀 Test dashboard running on http://localhost:${port} \n`);
     console.log(`🚀 Query API Route: /query/[q]\n`);
     console.log(`🚀 Data Edit API Route: /editor\n`);
   });
