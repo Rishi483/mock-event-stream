@@ -33,7 +33,7 @@ export default function Home() {
       </AppBar>
       <Stack mt={5} px={3}>
         <Grid container spacing={{ xs: 2, sm: 4 }}>
-          <Card title={"Mock Event Stream"} lastUpdated={"12 July 2024"} routeName="MockEventStream"/>
+          <Card title={"Event Stream"} lastUpdated={"12 July 2024"} routeName="event-stream"/>
         </Grid>
       </Stack>
     </Box>

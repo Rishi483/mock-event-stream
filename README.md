@@ -15,11 +15,13 @@ Create a `mock-event-stream-config.json` file at the root of your project in whi
 
 - **port** : The port on which you want the package to run (By default it will be 5000).
 - **latency** : The delay you want between the event stream responses. (By default it will be 1 second)
+- **origin** : The origin of the frontend from which the requests will be made
 
 ```json
 {
   "port": 5000,
   "latency": 1000,
+  "origin": "http://localhost:5000"
 }
 ```
 ### 2. Create Data File

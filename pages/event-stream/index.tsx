@@ -132,10 +132,10 @@ const Home: React.FC = () => {
       <AppBar position="sticky" style={{ backgroundColor: "#fff", borderBottom: "1px solid #F8F8FA" }} elevation={0}>
         <Toolbar>
           <Typography sx={{ flexGrow: 1, fontWeight: "500", fontSize: "20px", display: "flex", alignItems: "center", gap: "4px" }}>
-            <Link style={{ display: "flex", alignItems: "center", textDecoration: 'none', color: "black" }} href="/"><HomeIcon /></Link> {"> Mock Event Stream"}
+            <Link style={{ display: "flex", alignItems: "center", textDecoration: 'none', color: "black" }} href="/"><HomeIcon /></Link> {"> Event Stream"}
           </Typography>
           <Button>
-            <Link href="/MockEventStream/editor" style={{ fontWeight: "500", fontSize: "14px", textDecoration: 'none', color: "black", display: "flex", alignItems: "center" }}>
+            <Link href="/event-stream/editor" style={{ fontWeight: "500", fontSize: "14px", textDecoration: 'none', color: "black", display: "flex", alignItems: "center" }}>
               Open Editor
               <CallMadeIcon />
             </Link>

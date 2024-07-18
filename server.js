@@ -4,6 +4,7 @@ const express = require('express');
 const next = require('next');
 const { resolve } = require('path');
 const { readFile, readFileSync } = require('fs');
+const cors=require('cors');
 
 const app = next({ dev: false, dir: __dirname });
 const handle = app.getRequestHandler();
@@ -38,7 +39,12 @@ const run = async () => {
 
   const server = express();
 
-  server.get('/query/:q', (req, res) => {
+  server.use(cors({
+    credentials:true,
+    origin:config.origin
+  }));
+
+  server.all('/query/:q', (req, res) => {
     const { q } = req.params;
     const decodedQuery = decodeURIComponent(q);
 
@@ -87,6 +93,7 @@ const run = async () => {
         if (errorTimeout) {
           setTimeout(() => {
             clearInterval(interval);
+            res.write('event: error\ndata: Timeout occurred\n\n');
             res.end();
           }, parseInt(errorTimeout));
         }

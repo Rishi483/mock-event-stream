@@ -150,7 +150,7 @@ const EditorPage: React.FC = () => {
           }}
         >
           <Link
-            href="/MockEventStream"
+            href="/event-stream"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -162,7 +162,7 @@ const EditorPage: React.FC = () => {
             }}
           >
             <ArrowBackIcon sx={{ mr: 1 }} />
-            Back to Mock Event Stream
+            Back to Event Stream
           </Link>
           <Button
             style={{ gap: "5px", fontSize: "15px" }}
